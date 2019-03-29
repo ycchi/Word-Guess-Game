@@ -42,7 +42,7 @@ var eaglesArr = [
     profileImg: "philadelphiaeagles.com/players/foles.jpg"
   },
   {
-    name: "philly philly",
+    name: "brandon graham",
     profileImg: "phillyspecial.jpg"
   },
   {
@@ -135,6 +135,7 @@ document.onkeyup = function (event) {
 
   // Join elements in an array to create a string blankSpaceJoined
   var blankSpaceJoined = blankSpace.join("")
+  var blankSpaceJoinedDisplay = blankSpace.join(" ")
   console.log("join: " + blankSpaceJoined);
 
 
@@ -160,6 +161,28 @@ console.log("wins: " + winCounter);
 console.log("Loses: " + loseCounter);
 console.log("Guesses Remaining: " + guessesRemaining);
 console.log("Incorrect Letters: " + incorrectArr);
+
+  
+
+
+
+  var $blankSpace = document.getElementById("blankSpace")
+  $blankSpace.textContent = blankSpaceJoinedDisplay;
+
+
+  var $wins = document.getElementById("wins")
+  $wins.textContent = winCounter;
+
+  var $losses = document.getElementById("losses")
+  $losses.textContent = loseCounter;
+
+  var $lettersUsed = document.getElementById("lettersUsed")
+  $lettersUsed.textContent = incorrectArr;
+
+  var $guessesRemaining = document.getElementById("guessesRemaining")
+  $guessesRemaining.textContent = guessesRemaining;
+
+
 }
 
 

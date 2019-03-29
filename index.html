@@ -1,16 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="./assets/css/style.css">
-  <script src="./assets/javascript/game.js"></script>
-  <title>The Philadelphia Eagles Word Guess Game</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+<link rel="stylesheet" href="./assets/css/style.css">
+<script src="./assets/javascript/game.js"></script>
+<title>The Philadelphia Eagles Personnel Guess Game</title>
 </head>
+
 <body>
-  <h1>Guess the Player</h1>
+  <div class="container vh-100">
+    <div class="container h-50 bg-dark">
+      
+    </div>
+
+    <div class="container h-25 bg-success d-flex justify-content-center flex-wrap align-content-center">
+      <div class="display-4 font-weight-bold text-white" id="blankSpace"></div>
+    </div>
+
+    <div class="container h-25 bg-white">
+        <div class="row">
+            <div class="p-2 bg-white border w-25 d-flex justify-content-center align-items-center"> WINS <br><span class="badge badge-success badge-pill" id="wins">0</span></div>
+            <div class="p-2 bg-white border w-75 d-flex justify-content-center align-items-center"> LETTERS USED: <br><span id="lettersUsed"></span></div>
+            
+          </div>
+          <div class="row">
+              <div class="p-2 bg-white border w-25 d-flex justify-content-center align-items-center"> LOSSES <br><span class="badge badge-success badge-pill" id="losses">0</span></div>
+              <div class="p-2 bg-white border w-75 d-flex justify-content-center align-items-center"> GUESSES REMAINING: <br><span class="badge badge-success badge-pill" id="guessesRemaining">10</span></div>
+            </div>
+    </div>
+        
+  </div>
+
+
+
+
+  <!-- <div class="d-flex flex-row align-items-center">
+      <div class="p-2 bg-white border">Letters Used</div>
+      <div class="p-2 bg-white border flex-sm-grow-1 d-flex justify-content-center align-items-center"> LETTERS USED: A, B, C, D, E, F, G, H, I, j<span class="badge badge-primary badge-pill">14</span></div>
+      
+      <div class="p-2 bg-white border">Flex item 3</div>
+  </div>
+  <div class="d-flex flex-row align-items-center">
+      <div class="p-2 bg-white border flex-sm-grow-1 d-flex justify-content-center align-items-center flex-sm-grow-1">WIN <br><span class="badge badge-primary badge-pill">14</span></div>
+      <div class="p-2 bg-white border flex-sm-grow-1 d-flex justify-content-center align-items-center flex-sm-grow-1">Loss  <br><span class="badge badge-primary badge-pill">7</span></div>
+      <div class="p-2 bg-white border flex-sm-grow-1 d-flex justify-content-center align-items-center flex-sm-grow-1">Guesses Remaining <br><span class="badge badge-primary badge-pill">7</span></div>
+  </div> -->
+
   
-  
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 </html>
