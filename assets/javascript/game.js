@@ -34,19 +34,19 @@
 
 var eaglesArr = [
   {
-    name: "briandawkins",
+    name: "brian dawkins",
     profileImg: "philadelphiaeagles.com/players/dawkins.jpg"
   },
   {
-    name: "nickfoles",
+    name: "nick foles",
     profileImg: "philadelphiaeagles.com/players/foles.jpg"
   },
   {
-    name: "phillyphilly",
+    name: "philly philly",
     profileImg: "phillyspecial.jpg"
   },
   {
-    name: "dougpederson",
+    name: "doug pederson",
     profileImg: "phillyspecial.jpg"
   }
 ]
@@ -54,6 +54,7 @@ var eaglesArr = [
 // win counter & lose counter
 var winCounter = 0;
 var loseCounter = 0;
+var guessesRemaining = 10;
 
 
 //container for incorrect guesses
@@ -71,10 +72,13 @@ function newGame() {
   randomPick = eaglesArr[Math.floor(Math.random() * eaglesArr.length)]["name"];
 
   //blankSpace reset according to the length of randomPick
+  blankSpace = [];
   for (var i = 0; i < randomPick.length; i++){
     blankSpace.push("_")
   }
 
+  // Reset guessesRemaining
+  guessesRemaining = 10;
 
   //incorrectArr reset
   incorrectArr = [];
@@ -109,16 +113,55 @@ document.onkeyup = function (event) {
   console.log("randomPick: " + randomPick);
 
   var matchingIndex = getAllIndexes(randomPick, userGuess);
-  console.log(matchingIndex);
+  console.log("matchingIndex: " + matchingIndex);
+
+  // Push incorrect userGuess to incorrectArr
+  if (matchingIndex.length === 0 && !incorrectArr.includes(userGuess)) {
+    console.log("no match!")
+
+    incorrectArr.push(userGuess);
+    guessesRemaining--;
+    
+  }
+
+  console.log("incorrectArr: " + incorrectArr)
+
   
   for (var i = 0; i < matchingIndex.length; i ++){
     blankSpace[matchingIndex[i]] = userGuess;
   }
   
-
   console.log("blankSpace: " + blankSpace);
 
+  // Join elements in an array to create a string blankSpaceJoined
+  var blankSpaceJoined = blankSpace.join("")
+  console.log("join: " + blankSpaceJoined);
+
+
+  
+  
+  //when guessesRemaining reaches 0, loseCounter increment by 1
+  if (guessesRemaining === 0) {
+    loseCounter++;
+    alert("You Lose!")
+    newGame();
+  }
+
+
+  //compare blankSpaceJoined to randomPick
+  if (blankSpaceJoined === randomPick) {
+    winCounter++;
+    alert("You Win!")
+    newGame();
+  }
+  
+ 
+console.log("wins: " + winCounter);
+console.log("Loses: " + loseCounter);
+console.log("Guesses Remaining: " + guessesRemaining);
+console.log("Incorrect Letters: " + incorrectArr);
 }
+
 
 
 
